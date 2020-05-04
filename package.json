@@ -1,0 +1,22 @@
+{
+  "name": "clinicinterface",
+  "version": "1.0.0",
+  "description": "Clinic interface - from the health ministry to the orange lake",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guyzion/ClinicInterface.git"
+  },
+  "author": "guyzion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guyzion/ClinicInterface/issues"
+  },
+  "homepage": "https://github.com/guyzion/ClinicInterface#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
