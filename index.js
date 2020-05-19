@@ -10,16 +10,16 @@ const watcher = chokidar.watch(dirPath, { persistent: true });
 watcher.on('add', newFileListener);
 
 function newFileListener(path) {
-    console.log(`New file was added: ${path}`)
+    console.log(`New file was added: ${path}\n`)
     let entityArr = readNewFile(path);
 
     let invalidEntities = entityArr.filter(entity => !isValidEntity(entity));
     console.log(`Found ${invalidEntities.length} invalid entities:`);
-    invalidEntities.forEach((entity, index) => console.log(`Entity number ${index + 1} is invalid`));
+    invalidEntities.forEach((entity) => console.log(entity));
 
     entityArr = entityArr.filter(entity => isValidEntity(entity));
     if(entityArr === []){
-         console.log("No valid entities.");
+         console.log("No valid entities");
          return;
     }
 
@@ -27,11 +27,12 @@ function newFileListener(path) {
     sendToDP(jsonArr);
 
     fs.unlinkSync(path); // delete the file 
+    console.log(`File deleted`)
 }  
 
 function readNewFile(path) {
     let file =  fs.readFileSync(path, 'utf8');
-    console.log(`File data: ${file}`);
+    console.log(`File data:\n${file}\n`);
     let lines =  file.split('\r\n')
     return lines.map(line => line.split(';'));
 }
@@ -51,6 +52,8 @@ function parseToISOString(date, time){
 }
 
 function sendToDP(jsonArr){
-    console.log(jsonArr);
+    msg = console.log(jsonArr);
+    console.log(`\nResult message:\n${msg}\n`);
+    console.log('Data sent')
 }
 
