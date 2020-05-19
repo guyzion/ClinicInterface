@@ -1,7 +1,7 @@
 const chokidar = require('chokidar');
 const fs = require('fs');
 const moment = require('moment');
-const isValidEntity = require('/Dev/ClinicInterface/validators');
+const isValidEntity = require('./validators');
 
 const fields = ['Num_Avi', 'Emer_Dept_hmo_GK', 'Status_Clinic', 'Status_Pharmacy', 'Status_Family_Doctor', 'Status_Nurse', 'Status_Pediatrician', 'Status_Gynecologist']
 const dirPath = 'ex-files'
@@ -52,8 +52,8 @@ function parseToISOString(date, time){
 }
 
 function sendToDP(jsonArr){
-    msg = console.log(jsonArr);
-    console.log(`\nResult message:\n${msg}\n`);
+	console.log(`\nResult message:\n`);
+	console.log(jsonArr);
     console.log('Data sent')
 }
 
