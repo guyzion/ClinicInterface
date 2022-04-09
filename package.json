@@ -19,6 +19,6 @@
   "homepage": "https://github.com/guyzion/ClinicInterface#readme",
   "dependencies": {
     "chokidar": "^3.4.0",
-    "moment": "^2.25.3"
+    "moment": "^2.29.2"
   }
 }
